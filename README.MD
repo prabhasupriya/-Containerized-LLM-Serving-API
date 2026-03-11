@@ -20,6 +20,12 @@ Optimized Footprint: Uses a python:3.10-slim base and torch-cpu to maintain an o
 **2.Verify Image Optimization** :
 ```bash
 docker images
+
+curl -X GET http://localhost:8000/health
+
+curl -X POST http://localhost:8000/generate -H "Content-Type: application/json" -d "{\"prompt\": \"Hello\"}" 
+
+curl -X POST http://localhost:8000/generate -H "X-API-KEY: LT-vwH99lXG0rRg-gD6S8QuIui0Bw6iM4nJbIKQHydo" -H "Content-Type: application/json" -d "{\"prompt\": \"The future of AI is\", \"max_new_tokens\": 20}"
 ```
 **3. Run Automated Validation Suite:**Executes tests for Health, Security (403 Rejection), and Concurrency
 ```bash
@@ -41,3 +47,5 @@ Endpoint,Method,Auth Required,Description
 -H "Content-Type: application/json" ^
 -d "{\"prompt\": \"The future of AI is\", \"max_new_tokens\": 20}"
 ```
+
+[watch video ](https://youtu.be/kxK2M_ogCsA)
